@@ -4,7 +4,7 @@ layout: default
 
 [Home](index)
 
-# Rules
+# Maze Solver Rules
 
 A. **Objective**
 
