@@ -2,10 +2,20 @@
 layout: default
 ---
 
-# Rulesets
+# Description
 
-* [Line Follower](rules-line-follower)
-* [Maze Solver](rules-maze-solver)
+The FRCC RoboRace is a competition organized by the Front Range Community College Computer Science Club designed to encourage participants to push their STEM skills limits.  There will be two main events, the Line Follower race and the Maze Solver race.  The events are designed such that a single, well designed robot could compete in both competitions.
+
+# Events
+
+* [**Student** Line Follower](rules-line-follower#Student)
+* [**Student** Maze Solver](rules-maze-solver#Student)
+
+# Intro to Computer Science Students
+
+A special Student class in both events is made for Front Range Community College Students.  This class will allow Students to participate using the school owned Parallax BoE-Shield-Bot.  There will be no entrance fee for this class and it is available to all currently enrolled FRCC Students.
+
+**Note: Students currently enrolled in the Intro to Computer Science class will be given priority when scheduling time to work with the Parallax BoE-Shield-Bot.**
 
 # Resources
 
