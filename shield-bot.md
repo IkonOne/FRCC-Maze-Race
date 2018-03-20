@@ -27,13 +27,14 @@ This is a guide of the key concepts that you must acquire to learn to turn the S
 1. Complete chapters 0, 1, 2 and 5 in the Project Book included in the Arduino Starter Kit.  **The Arduino should remain connected to the robot.**
 2. [Ensure the servos are connected correctly.](https://learn.parallax.com/tutorials/robot/shield-bot/robotics-board-education-shield-arduino/chapter-2-shield-lights-servo-9)
 3. [Test the servos.](https://learn.parallax.com/tutorials/robot/shield-bot/robotics-board-education-shield-arduino/chapter-2-shield-lights-servo-4) ([Part 1](https://learn.parallax.com/tutorials/robot/shield-bot/robotics-board-education-shield-arduino/chapter-2-shield-lights-servo-3), [Part 2](https://learn.parallax.com/tutorials/robot/shield-bot/robotics-board-education-shield-arduino/chapter-2-shield-lights-servo-2))
-4. [Learn to use the line sensor.](https://www.pololu.com/docs/0J19)
-
+4. [Read data from the line sensors.]
 You should now have the experience necessary to move the Shield Bot along the line.
 
 # Take it to the Limit
 
-* [Use millis for timing instead of delay.](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/using-millis-for-timing)  This will let you multitask since delay is a blocking function so that you can update the motor speed in real time.
+These are some suggestions on where to look for ideas on how to make the robot faster.  The point of the competition is to win right?
+
+* [Use millis for timing instead of delay.](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/using-millis-for-timing)
 * [Use Finite State Machines to control the line sensor and the state of the robot.](http://gameprogrammingpatterns.com/state.html)
 * [Use a PID control loop to steer the robot smoothly.](https://www.robotshop.com/letsmakerobots/pid-tutorials-line-following-0)
 
