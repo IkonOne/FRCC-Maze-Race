@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: "/index.html"
 ---
 
 # Description
@@ -8,8 +9,8 @@ The FRCC RoboRace is a competition organized by the Front Range Community Colleg
 
 # Events
 
-* [**Student** Line Follower](rules-line-follower#Student)
-* [**Student** Maze Solver](rules-maze-solver#Student)
+* [**Student** Line Follower](/rules/line-follower/)
+* [Drag Race](rules-drag-race)
 
 # Intro to Computer Science Students
 
