@@ -41,168 +41,48 @@ Now that you have the required hardware, complete [Activity 1](https://learn.par
 
 ### Learn to use the line sensors.
 
+After completing this tutorial, you should be able to:
+
+* Turn on and off the line sensor emitters.
+* Read values from the line sensors.
+
 If you have not yet figured out how to program the Shield Bot, be sure to complete the [Hello World](#hello-world) step first.
 
-For this step, you will need the Shield Bot with the Arduino attached, the Arduino programming cable and a computer that you can program the Arduino with.
+For this tutorial, you will need the Shield Bot with the Arduino attached, the Arduino programming cable and a computer that you can program the Arduino with.  Once you have everything, verify that the sensors are hooked up correctly.  Please refer to the [Sensor Wiring](#sensor-wiring) section to verify this.
 
-Let's start.
+##### How the line sensors work
 
-The first step is to ensure that the sensors are hooked up correctly.  Please refer to the [Sensor Wiring](#sensor-wiring) section to verify this.
+The line sensor is composed of 4 [QRB1134](https://www.digikey.com/product-detail/en/on-semiconductor/QRB1134/QRB1134-ND/187533) sensors and a custom PCB that allows the values of the sensors to be read and can turn on and off all of the emitters.
 
-Now, create a new Arduino sketch and copy the following code in.  Make sure that you read the comments and understand the code.
+The emitters in the QRB1134 are simply LED's that emit Infrared Light.  It is like a fancy type of Infrared light bulb.  The more electricity we send through it, the brighter it is.
 
-```cpp
-/**
- *
- *   _________.__    .__       .__       .___       __________        __  
- *  /   _____/|  |__ |__| ____ |  |    __| _/       \______   \ _____/  |_
- *  \_____  \ |  |  \|  |/ __ \|  |   / __ |  ______ |    |  _//  _ \   __\
- *  /        \|   Y  \  \  ___/|  |__/ /_/ | /_____/ |    |   (  <_> )  |  
- * /_______  /|___|  /__|\___  >____/\____ |         |______  /\____/|__|  
- *         \/      \/        \/           \/                \/             
- * 
- * @author  Erin M. Gunn
- * @email   ikonone@gmail.com
- * @description A tutorial to familiarize students with the FRCC Shield Bot.
- * 
- * Directions: Read the comments from top to bottom.  Be sure to complete
- * the activities at the bottom.
- */
+The sensors are a special electrical component called a phototransistor.  This is like the opposite of a light bulb.  The more light hits it, the more electricity it lets pass through.
 
-#include <Arduino.h>
+We use these sensors by turning on the emitter, putting something in front of the sensor and then reading how much electricity is passing through the phototransistor.  The amount of electricity is a function to two variables:
 
-/**
- * These constants rename the Arduino pins that the sensors
- * are plugged into so that our code is easier to read.
- */
-const int PIN_IR_EMITTERS = A5;
-const int PIN_IR_SENSOR1 = A1;
-const int PIN_IR_SENSOR2 = A2;
-const int PIN_IR_SENSOR3 = A3;
-const int PIN_IR_SENSOR4 = A4;
+1. How close the object is to the sensor. (The optimal distance is around 5mm)
+2. How much infrared light the object reflects.  (White objects reflect more than black)
 
-/**
- * Print an array to the Serial console.
- * 
- * @param   arr     An array of type T where T is anyhting that can be printed by Serial.
- * @param   arrSize The size of the array.
- */
-template <class T>
-void printArray(T arr[], int arrSize) {
-    Serial.print("{ ");
-    for(int i = 0; i < arrSize; i++) {
-        Serial.print(arr[i]);
-        if(i < arrSize - 1)
-            Serial.print(", ");
-    }
-    Serial.println("}");
-}
+I'm not sure why I took the time to make an ascii art graphic displaying this concept, but I did, so I'm going to leave it.
 
+```
+EMITTER          SENSOR
+      \/        /\
+       \        /
+        \      /
+         \    /
+          \  /
+           \/
++---------------------+
+```
 
-/**
- * This is the first function called by the Arduino.
- * It is only called once.
- */
-void setup() {
-    Serial.begin(9600);
+##### How to actually use the sensors
 
-    /**
-     * Before using the line sensor, we must configure the Arduino
-     * so that it knows how we will be using the pins that the sensor
-     * is connected to.  We do that using pinMode.
-     * 
-     * With pinMode, we can tell the Arduino that we will use a pin
-     * as either an input or output.  Trying to use a pin that was
-     * set as an output as an input pin will yield funky results.
-     * For this reason, it is best to avoid toggling pins as much
-     * as possible.
-     */
+Create a new Arduino sketch and copy the following code in to the sketch.  Be sure to read and understand all of the comments.
 
-    // Configure line sensor pins.
-    pinMode(PIN_IR_EMITTERS, OUTPUT);
-    pinMode(PIN_IR_SENSOR1, INPUT);
-    pinMode(PIN_IR_SENSOR2, INPUT);
-    pinMode(PIN_IR_SENSOR3, INPUT);
-    pinMode(PIN_IR_SENSOR4, INPUT);
+If you experience any issues, please reach out either on the FRCC CSClub's discord or [comment directly on the gist here](https://gist.github.com/IkonOne/c6ab3e4a82d7c0e36aa74e1925899b93).
 
-    /**
-     * The brightness of the sensors is controlled by setting the 
-     * value parameter of analogWrite to any integer between [0, 255].
-     * 
-     * 0 is off.
-     * 255 is full bright.
-     * 
-     * This does not work by simply changing the amount of
-     * electricity flowing to the IR Emitters.  It is actually
-     * using Pulse Width Modulation (PWM).  This is not necessary
-     * to understand now, but there is more information in the docs 
-     * for the curious.
-     * 
-     * https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
-     */
-
-    // Turn on the IR Emitter.
-    analogWrite(PIN_IR_EMITTERS, 255);
-}
-
-void loop() {
-    /**
-     * The IR Sensors allow varying amounts of voltage to pass through
-     * them depending on how much infrared light is hitting them.  We
-     * can read the amount of voltage that is passing through the sensor
-     * using the built-in Analog to Digital Converter (ADC).
-     * 
-     * Arduino.h provides analogRead to allow us to do just that.  We
-     * simply pass it the correct pin number and it returns a value 
-     * between [0, 1023] that corresponds to the current voltage.
-     * 
-     * In our case, a return value of 0 is 0 volts and a return value
-     * of 1023 is 5 volts.  Different microcontrollers (MCU) may measure
-     * different voltage ranges.  More information is in the docs for
-     * the curious.
-     * 
-     * https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/
-     */
-
-    // Read the values of the sensors.
-    int sensor1 = analogRead(PIN_IR_SENSOR1);
-    int sensor2 = analogRead(PIN_IR_SENSOR2);
-    int sensor3 = analogRead(PIN_IR_SENSOR3);
-    int sensor4 = analogRead(PIN_IR_SENSOR4);
-
-    // print the sensor values to the serial console.
-    const int sensorValues[] = { sensor1, sensor2, sensor3, sensor4 };
-    printArray(sensorValues, 4);
-}
-
-/**
- * Now run the code.
- */
-
-/**
- * Activities (Yay!! \o/ )
- * 
- * 1. Try putting different objects in front of the sensors to see
- *      how the values change.  Which colors or materials lower the
- *      values and which raise them?  Do the values ever reach the
- *      documented minimum or maximum (see analogRead docs)?
- * 
- * 2. Using the crappy whiteboard demo track, output to the serial
- *      console using Serial.println which sensor the line is under.
- *      Then if the line is under 2 sensors, print both.
- *      Now print every sensor which the line is under.
- *      (Hint: It could be under all 4 sensors)
- * 
- * BONUS: Figure out where the center of the line is under the sensors 
- * in code.  This is a non-trivial problem that introduces several 
- * electrical and mechanical issues.  The main electrical issue is
- * that the sensors don't ever reach their real minimum or maximum
- * values and each sensor is different from the one next to it.  The
- * mechanical issue is the sensors are not evenly spaced so you will
- * likely not ever be able to knoe _exactly_ where the center is
- * unless it is between the middle sensors.
- */
- ```
+{% gist c6ab3e4a82d7c0e36aa74e1925899b93 %}
 
 ## Take it to the Limit
 

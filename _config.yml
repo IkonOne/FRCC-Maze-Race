@@ -5,3 +5,6 @@ google_analytics:
 theme: jekyll-theme-slate
 include: ["_pages"]
 permalink: /:title/
+
+plugins:
+  - jekyll-gist
