@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: "/shield-bot/"
+permalink: "/shield-bot.html"
 ---
 
 # Shield Bot
@@ -58,12 +58,10 @@ The emitters in the QRB1134 are simply LED's that emit Infrared Light.  It is li
 
 The sensors are a special electrical component called a phototransistor.  This is like the opposite of a light bulb.  The more light hits it, the more electricity it lets pass through.
 
-We use these sensors by turning on the emitter, putting something in front of the sensor and then reading how much electricity is passing through the phototransistor.  The amount of electricity is a function to two variables:
+We use these sensors by turning on the emitter, putting something in front of the sensor and then reading how much light bounces back.  The amount of light is a function of two variables:
 
 1. How close the object is to the sensor. (The optimal distance is around 5mm)
 2. How much infrared light the object reflects.  (White objects reflect more than black)
-
-I'm not sure why I took the time to make an ascii art graphic displaying this concept, but I did, so I'm going to leave it.
 
 ```
 EMITTER          SENSOR

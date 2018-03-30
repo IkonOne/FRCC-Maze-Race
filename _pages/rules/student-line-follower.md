@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: "/rules/line-follower/"
+permalink: "/rules/student-line-follower.html"
 ---
 
 # Rules for the Student Line Follower Competition
@@ -20,8 +20,5 @@ B. **Rules for the Course**
 C. **Rules for the Robot**
 
 1. The robot used will be the Parallax Shield-Bot owned by the Front Range Community College Computer Information Systems Department.
-2. The robot may have additional sensors and motors attached by the contestant.
-3. The existing sensors, servos, wheels, chassis, Arduino and Board of Education Shield may not be modified with the following exceptions:
-    1. Sensors may be connected to the Board of Education Shield with jumper wires in any configuration.
-    2. Servos may be connected to the Board of Education Shield with jumper wires or with the already attached servo connectors in any configuration.  The wires attached to the servos may not be modified.
-4. Additions to the robot shall not protrude 14cm from the robot in any direction.
+2. The robot may not have additional electronics.
+3. The existing sensors, servos, wheels, chassis, Arduino and Board of Education Shield may not be modified.
