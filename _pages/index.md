@@ -9,9 +9,9 @@ The FRCC Robot Race is a competition organized by the Front Range Community Coll
 
 # When and Where
 
-Date: April 27th, 2018
-Time: 6pm-8pm
-Place: Blanca Peak hallways in Larimer campus.
+* Date: April 27th, 2018
+* Time: 6pm-8pm
+* Place: Blanca Peak hallways in Larimer campus.
 
 # Registration
 
@@ -21,7 +21,7 @@ Registration is required to compete in the event.  **Registration will be closed
 
 # What is a Line Following Robot Race
 
-It is a competition where individuals design and build robots that follow a line as fast as possible.  For an example, [watch this video](https://www.youtube.com/watch?v=7omDkur_fk8).
+It is a competition where individuals or teams design and build robots that follow a line as fast as possible.  For an example, [watch this video](https://www.youtube.com/watch?v=7omDkur_fk8).
 
 # How do you compete?
 
