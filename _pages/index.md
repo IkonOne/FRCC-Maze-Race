@@ -7,6 +7,18 @@ permalink: "/index.html"
 
 The FRCC Robot Race is a competition organized by the Front Range Community College Computer Science Club designed to encourage participants to push their STEM skills to the limits.  The first Robot Race will be a line following robotics race.
 
+# When and Where
+
+Date: April 27th, 2018
+Time: 6pm-8pm
+Place: Blanca Peak hallways in Larimer campus.
+
+# Registration
+
+Registration is required to compete in the event.  **Registration will be closed April 16th, 2018.**
+
+[Register Here](https://goo.gl/forms/UfGM3spfAEz1vtaV2)
+
 # What is a Line Following Robot Race
 
 It is a competition where individuals design and build robots that follow a line as fast as possible.  For an example, [watch this video](https://www.youtube.com/watch?v=7omDkur_fk8).
@@ -17,12 +29,6 @@ Simply determine which(if not both) competition you would like to compete in and
 
 * The [Student](/robots/shield-bot.html) competition is for teams who would like to compete by programming the Schools Shield-Bot.
 * The [Club](/robots/club-bot.html) competition is for teams who wish to build their own robot and compete with that.
-
-# Registration
-
-Registration is required to compete in the event.  **Registration will be closed April 16th, 2018.**
-
-[Register Here](https://goo.gl/forms/UfGM3spfAEz1vtaV2)
 
 # How do I get help?
 
