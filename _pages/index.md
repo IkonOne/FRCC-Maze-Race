@@ -5,34 +5,29 @@ permalink: "/index.html"
 
 # Description
 
-The FRCC RoboRace is a competition organized by the Front Range Community College Computer Science Club designed to encourage participants to push their STEM skills limits.  There will be two main events, the Line Follower race and the Maze Solver race.  The events are designed such that a single, well designed robot could compete in both competitions.
+The FRCC Robot Race is a competition organized by the Front Range Community College Computer Science Club designed to encourage participants to push their STEM skills to the limits.  The first Robot Race will be a line following robotics race.
 
-# Events
+# What is a Line Following Robot Race
 
-* [**Student** Line Follower](/rules/line-follower/)
-* [Drag Race](rules-drag-race)
+It is a competition where individuals design and build robots that follow a line as fast as possible.  For an example, [watch this video](https://www.youtube.com/watch?v=7omDkur_fk8).
 
-# Intro to Computer Science Students
+# How do you compete?
 
-A special Student class in both events is made for Front Range Community College Students.  This class will allow Students to participate using the school owned Parallax BoE-Shield-Bot.  There will be no entrance fee for this class and it is available to all currently enrolled FRCC Students.
+Simply determine which(if not both) competition you would like to compete in and register (**Registration is required**).  There are two options.
 
-**Note: Students currently enrolled in the Intro to Computer Science class will be given priority when scheduling time to work with the Parallax BoE-Shield-Bot.**
+* The [Student](/robots/shield-bot.html) competition is for teams who would like to compete by programming the Schools Shield-Bot.
+* The [Club](/robots/club-bot.html) competition is for teams who wish to build their own robot and compete with that.
 
-# Resources
+# Registration
 
-These resources are in the rough order in which they should absorbed.  Anything marked Extra is for those that would like to dive deeper into the related subject.
+Registration is required to compete in the event.  **Registration will be closed April 16th, 2018.**
 
-* Arduino: [Get an IDE and follow some directions to get code running](https://www.arduino.cc/en/Main/Software)
-* Arduino: [Fitzring](http://fritzing.org/home/) is an application that will make it easier to try out different setups without requiring access to the school robot.  [It may be possible to run actual Arduino simulations on as well](http://tech.memoryimprintstudio.com/arduino-control-led-with-fritzing/)
-* Robotics: [Various tutorials related to using the schools robot](https://learn.parallax.com/tutorials/board-education-shield-arduino)
-* Line Following: [PID Control](http://www.drbit.nl/2014/10/pid-algorithm-implemented-line-following-robot/)
-* Maze Solving: [Djikstras shortest path](https://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/)
-* Maze Solving: [Example of maze solving simulation](https://www.youtube.com/watch?v=qjEggw7ByrA)
-* Maze Solving: [Adachi micromouse maze solving algorithms](http://www.micromouseonline.com/2008/05/27/adachi-micromouse-maze-solving-algorithms/)
-* Extra: [The book of Eli - Microcontrollers, robotics and warp drives](https://community.nxp.com/docs/DOC-95170)
+[Register Here](https://goo.gl/forms/UfGM3spfAEz1vtaV2)
 
-# Guidelines for Success
+# How do I get help?
 
-The best way to ensure your success to to break the problems down into their smallest components and then order them based on priority.  For example, the robot has to move to compete in either of the competitions, so make it move first.
+There are several ways:
 
-Also, don't reinvent the wheel.  There are many people who have solved these problems before you, and many of them have shared their solutions to some extent.  Seek them out!
+1. Look through this website.  The rules are posted here as well as guidelines on how to go from zero to hero.
+2. Visit room BP119 on Fridays between 4pm-6pm.  I and others will be in the room working on our robots or just generally geeking out.  New faces are always welcome.
+3. [Post an issue on github](https://github.com/IkonOne/frcc-robot-race/issues/new). (requires registration)
