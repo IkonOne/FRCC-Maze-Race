@@ -1,12 +1,21 @@
-{% for item in site.data.nav-menu.toc %}
-    {% if item.url %}
-        <a href="{{ item.url }}"><h3>{{ item.title }}</h3></a>
-    {% else %}
-        <h3>{{ item.title }}</h3>
-    {% endif %}
-    <ul>
-    {% for entry in item.subfolderitems %}
-        <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+<ul class="topnav">
+    {% for item in site.data.nav-menu.toc %}
+    <li {% if item.subfolderitems %}class="dropdown"{% endif %}>
+
+        {% if item.url %}
+            <a class="dropdown_btn" href="{{ item.url }}"><h3>{{ item.title }}</h3></a>
+        {% else %}
+            <a><h3>{{ item.title }}</h3></a>
+        {% endif %}
+
+        {% if item.subfolderitems %}
+        <ul class="dropdown_content">
+            {% for entry in item.subfolderitems %}
+                <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+    </li>
     {% endfor %}
-    </ul>
-{% endfor %}
+</ul>

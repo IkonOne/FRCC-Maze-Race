@@ -262,7 +262,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 1024px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -293,6 +293,65 @@ Full-Width Styles
 
 #header_wrap .inner {
   padding: 50px 10px 30px 10px;
+}
+
+.topnav {
+  position: relative;
+  float: left;
+  width: 100%;
+  list-style: none;
+  background-color: #bbb;
+  color: #0F79D0;
+  z-index: 5;
+}
+
+.topnav li {
+  float: left;
+  padding: 7px 8px;
+  position: relative;
+  background: white;
+}
+
+.topnav a {
+  display: block;
+  text-decoration: none;
+}
+
+.topnav a:hover, .topnav li:hover, .topnav li:hover h3 {
+  background-color: black;
+  color: white;
+  text-decoration: underline;
+}
+
+/* dropdown */
+.topnav ul {
+  display: none;
+  position: absolute;
+
+  list-style: none;
+  padding: 0;
+
+  background: #222222;
+}
+
+.topnav ul li {
+  float: none;
+}
+
+.topnav ul a {
+  white-space: nowrap;
+}
+
+.topnav li:hover ul {
+  display: inline-block;
+}
+
+.topnav li:hover a {
+  text-decoration: underline;
+}
+
+.topnav li:hover li a {
+  text-decoration: none;
 }
 
 #project_title {
