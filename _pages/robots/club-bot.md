@@ -87,3 +87,87 @@ So if one of the ideas you have is to drive motors using the analog pins on an A
 Finally build the robot.  By now, you should have a solid idea of what ideas you had that worked and can put them together to complete your project.  Do it.
 
 ## How to Build a Robot
+
+A standard robot consists of three key modules, the microcontroller, the motors and the sensors.  For a first timer, it is best to either build a line follower using a kit.
+
+**Kits**
+* 
+
+In the following sections, I will provide a basic overview of the key modules of the line following robot and some suggestions of what to get for those that would like to build their own robots.
+
+### Microcontrollers
+
+The ideal microcontroller to start out with is the Arduino.  It is easily programmable and there are tons of resources online that you can find.  I understand that some of you have Pi's, but I know next to nothing about Pi's...
+
+The microcontroller is the brain of the robot.  In a line following robot, it will perform these functions:
+
+* Read the sensors
+* Determine where the robot is in relation to the line using the sensor data (position error)
+* Drive the motors according to the calculated error
+
+That is really it for a basic robot and is the best place to start.  There are robots that do nothing more than this that win contests.
+
+#### Where to get an Arduino?
+
+Ebay is your best bet.  They have kits that will give you everything you need to learn to use one.  Also remember that the line following kits above probably come with an Arduino as well, so if you get one of those, you probably don't need one of these.
+
+* [Cheap Starter Kit 1](https://www.ebay.com/itm/Epal-Ultimate-UNO-R3-Starter-Kit-for-Arduino-1602LCD-Servo-Motor-LED-Relay-RTC/263099256052?hash=item3d41f00cf4:g:i4kAAOSwjSJaevIu:sc:ShippingMethodExpress!27870!US!-1)
+* [Cheap Starter Kit 2](https://www.ebay.com/itm/UNO-R3-Ultimate-Starter-Kit-For-Arduino-LCD-Stepper-Servo-Ultrasonic-Motor-1602/253210291543?epid=1377694653&hash=item3af4826d57:g:p0sAAOSwYXVYx7KI)
+* [Cheap Starter Kit 3](https://www.ebay.com/itm/Professional-UNO-R3-Starter-Kit-for-Arduino-Servo-LCD-Compass-Gyro-USA-Shipping/262647016789?hash=item3d26fb6d55:g:jCcAAOSwXf1aeweF:sc:ShippingMethodExpress!27870!US!-1)
+
+### Motors
+
+**[WARNING]** Motors(and Servos) can destroy your microcontroller!  They draw a lot of current and you need to protect your MCU with some sort of regulating circuit.
+
+Here are some options that you can use to drive your motors.  All of these isolate the motor powersupply from the microcontroller to drive your motors:
+
+* [L298N](https://www.ebay.com/sch/i.html?_odkw=arduino&_osacat=0&_from=R40&_trksid=p2045573.m570.l1313.TR8.TRC2.A0.H0.Xl298n.TRS0&_nkw=l298n&_sacat=0).
+* [Ardumoto Shield](https://learn.sparkfun.com/tutorials/ardumoto-kit-hookup-guide?_ga=2.10223926.2023136451.1522506474-96889552.1515765240)
+* [Ardumoto Shield Kit](https://www.sparkfun.com/products/14180?_ga=2.237128067.2023136451.1522506474-96889552.1515765240) comes with motors and wheels.
+
+### Types of Motors
+
+My recommendation is to run with a [servo modified for continuous rotation](https://learn.adafruit.com/modifying-servos-for-continuous-rotation/overview) or a Brushed motor.  The servo is the easiest to control accurately but is generally a bit slow.  A brushed motor is normally going to be faster than a servo but it is harder to control accurately and will require gear reduction (more on that later).
+
+#### Servos
+
+Servos are generally designed to rotate only around 120 degrees instead of continuously rotating like a normal motor.  However, they can be modified by breaking a couple of mechanical blocks and soldering two resistors to the controllers.  Also, you can buy servos already modified.
+
+Here are some continous rotation servos:
+
+* [Pololu](https://www.pololu.com/category/143/continuous-rotation-servos)
+* [HiTec](https://www.servocity.com/hsr-2645crh-servo)
+* [Google](https://www.google.com/search?q=continuous+rotation+servo&rlz=1C5CHFA_enUS697US697&source=univ&tbm=shop&tbo=u&sa=X&ved=0ahUKEwjlvfbc65baAhVH1GMKHX3MDA8QsxgILA&biw=1440&bih=803)
+
+#### Brushed Motors
+
+Moving on to Brushed motors introduces a couple of new problems that Servos handle for you right out of the gate.
+
+1. Their speed can be harder to control.
+2. They require gear reduction to drive a wheel.
+
+##### Speed Control
+
+Brushed motors have optimal voltage ranges.  If they operate outside of those ranges, they loose torque and speed(and generate a ton of heat).  So you will want to use PWM to drive the motor.  [This tutorial relays the concept much better than I can](https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/).
+
+##### Gear Reduction
+
+Brushed motors will often spin at thousands to tens of thousands of RPM's.  Attaching a wheel directly to the motor shaft would simply not work as a result.  The motor would be trying to spin the wheel too fast and the torque of the motor would be too small to actually spin it, so the motor would burn out and you would have to replace it.
+
+To overcome this problem requires the use of gears.  This can be done by purchasing a motor with a gearbox on it, buying the gearbox itself or maybe using gears from an RC car parts supplier.
+
+##### Brushed Motor Purchase Options
+
+There are numerous sizes of brushed motors.  Pager motors and 130 size motors are possible solutions.  But really, you can probably make any motor work as long as you take the above issues into account.
+
+* [Pololu Motors and Gearboxes](https://www.pololu.com/category/22/motors-and-gearboxes)
+* [Basher Motors](https://hobbyking.com/en_us/130-size-brushed-rev-tuned.html) (These are likely just normal brushed motors with a nice label and some color.)
+* [HobbyKing Motor Finder](https://hobbyking.com/en_us/motor.html)
+
+#### Sensors
+
+Sensors come in many shapes and sizes.  The easiest way to get started with them is to get a prebuilt sensor board.  This will have documentation on how to use it with an arduino and will be just about plug and play.  It is relatively simple to develop your own board but without electronics experience, it would be time consuming to work out the details.
+
+* [Pololu Line Sensors](https://www.pololu.com/category/123/pololu-qtr-reflectance-sensors)
+* [Sparkfun Line Sensors](https://www.sparkfun.com/search/results?term=line+sensor)
+* [Google](https://www.google.com/search?q=line+sensor&rlz=1C5CHFA_enUS697US697&source=univ&tbm=shop&tbo=u&sa=X&ved=0ahUKEwj5-vn28JbaAhVJ12MKHbj3BSwQsxgIKQ&biw=1440&bih=803)
