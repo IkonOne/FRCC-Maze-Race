@@ -5,9 +5,11 @@ permalink: /robots/shield-bot.html
 
 # Shield Bot
 
-The Shield Bot is the free to use robot for FRCC Students.  The Shield Bot is based on the [Parallax Shield Bot](https://www.parallax.com/product/130-35000) but there are some key differences described below.  You must be an FRCC Student to use the ShieldBot in the races.
+This competition is specifically for FRCC Students who wish to use the schools robot and not build their own.
 
-Rules for this event can be [found here](/rules/club-line-follower.html).
+Rules for this event can be [found here](/rules/student-line-follower.html).
+
+The Shield Bot is based on the [Parallax Shield Bot](https://www.parallax.com/product/130-35000) but there are some key differences described below.  You must be an FRCC Student to use the ShieldBot in the races.
 
 ## Specifications
 
