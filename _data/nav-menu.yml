@@ -1,11 +1,15 @@
 toc:
   - title: Home
     url: /
-  - title: Rules
+  - title: How to Compete
     subfolderitems:
       - page: Student Line Follower
         url: /rules/student-line-follower.html
       - page: Club Line Follower
         url: /rules/club-line-follower.html
-  - title: Shield
-    url: /shield-bot.html
+  - title: Robots
+    subfolderitems:
+      - page: School Robot
+        url: /robots/shield-bot.html
+      - page: Club Robot
+        url: /robots/club-bot.html

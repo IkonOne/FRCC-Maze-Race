@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: "/shield-bot.html"
+permalink: /robots/shield-bot.html
 ---
 
 # Shield Bot
