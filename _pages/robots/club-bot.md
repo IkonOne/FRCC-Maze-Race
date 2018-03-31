@@ -175,6 +175,7 @@ There are numerous sizes of brushed motors.  Pager motors and 130 size motors ar
 * [Pololu Motors and Gearboxes](https://www.pololu.com/category/22/motors-and-gearboxes)
 * [Basher Motors](https://hobbyking.com/en_us/130-size-brushed-rev-tuned.html) (These are likely just normal brushed motors with a nice label and some color.)
 * [HobbyKing Motor Finder](https://hobbyking.com/en_us/motor.html)
+* [Ebay Gear Packs](https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2386202.m570.l1313.TR1.TRC0.A0.H0.Xplastic+motor+gears.TRS0&_nkw=plastic+motor+gears&_sacat=0)
 
 ### Sensors
 
