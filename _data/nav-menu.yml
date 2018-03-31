@@ -1,15 +1,15 @@
 toc:
   - title: Home
-    url: /
+    url: /frcc-robot-race/
   - title: How to Compete
     subfolderitems:
       - page: Student Line Follower
-        url: /rules/student-line-follower.html
+        url: /frcc-robot-race/rules/student-line-follower.html
       - page: Club Line Follower
-        url: /rules/club-line-follower.html
+        url: /frcc-robot-race/rules/club-line-follower.html
   - title: Robots
     subfolderitems:
       - page: School Robot
-        url: /robots/shield-bot.html
+        url: /frcc-robot-race/robots/shield-bot.html
       - page: Club Robot
-        url: /robots/club-bot.html
+        url: /frcc-robot-race/robots/club-bot.html
