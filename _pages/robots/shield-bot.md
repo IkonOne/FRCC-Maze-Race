@@ -33,7 +33,9 @@ Great question.  And fear not, it's actually quite simple.  There are three key 
 
 * [Hello World](#hello-world)
 * [Learn to use the line sensors.](#learn-to-use-the-line-sensors)
-* Learn to drive the servo motors.
+* [Learn to drive the servo motors.](#learn-to-drive-the-servo-motors)
+* [Follow the Line](#follow-the-line)
+* [Take it to the Limit](#take-it-to-the-limit)
 
 I will be getting you through these steps as quickly as I can.  My guess is that it will take around 1 hour to complete the setup process.
 
@@ -80,18 +82,45 @@ EMITTER          SENSOR
 
 ##### How to actually use the sensors
 
-Create a new Arduino sketch and copy the following code in to the sketch.  Be sure to read and understand all of the comments.
+Create a new Arduino sketch and type the following code in to the sketch.  Be sure to read and understand all of the comments.
 
 If you experience any issues, please reach out either on the FRCC CSClub's discord or [comment directly on the gist here](https://gist.github.com/IkonOne/c6ab3e4a82d7c0e36aa74e1925899b93).
 
 {% gist c6ab3e4a82d7c0e36aa74e1925899b93 %}
 
-## Take it to the Limit
+### Learn to Drive the Servo Motors
 
-These are some suggestions on where to look for ideas on how to make the Shield Bot faster.  The point of the competition is to win right?
+Good news!  Servo's are much easier.  The hardest part of understanding the shield bot is out of the way.
 
-* [Use millis for timing instead of delay.](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/using-millis-for-timing)
-* [Use Finite State Machines to control the line sensor and the state of the robot.](http://gameprogrammingpatterns.com/state.html)
+The servos on the shield bot have been modified for continuos rotation.  All this means is that they will continue to rotate in the direction that you tell them, at the speed you tell them (normal servos don't normally rotate forever, hence modified).
+
+To control the servos we will use a special class that is included with the Arduino called Servo.  More specifically, we will a function called writeMicroseconds that will send a special signal to the servo that tells it what to do.
+
+And that is really all you need to know before jumping into the code.  The next paragraph is just a quick explanation of what the signal actually is.
+
+So what is that signal?  It's kind of like morse code with electricity except the message changes due to how long the light is on instead of what pattern is being blinked.  And remember the name of the function from earlier (writeMicroseconds)? When we pass a value to that function, that value is how many microseconds our electric light is on before turning back off.  So if we pass 1500 to the writeMicroseconds function, we are telling the Servo class to turn the light on for 1500 microseconds.
+
+#### How to Actually Use the Servos
+
+Just as with the previous example, start a new Arduino sketch and type the code into the sketch.  Be sure to read and understand all of the comments.
+
+{% gist 4cb20f21abc44ac350a719759816da80 %}
+
+### Follow The Line
+
+At this point you now have the skills to turn the shield bot into a line following monster.  To tackle the project, you will need your code to do the following things:
+
+1. Move forward
+2. Read the sensors.
+3. Figure out if you need to steer the robot or not.
+4. Steer the robot in the direction you figured out.
+
+Remember that the race will have slow corners, 90 degree corners and crossovers.  You will need to account for all of those for the robot to complete the track.
+
+### Take it to the Limit
+
+PID control is really about as far as you can take the shield bot and below is a nice tutorial on how to do just that.
+
 * [Use a PID control loop to steer the robot smoothly.](https://create.arduino.cc/projecthub/mjrobot/line-follower-robot-pid-control-android-setup-e5113a)
 
 ## Resources
@@ -101,4 +130,3 @@ These are some suggestions on where to look for ideas on how to make the Shield 
 * [Learn Parallax](https://learn.parallax.com/)
 * [Sparkfun Tutorials](https://learn.sparkfun.com/tutorials)
 * [Fritzing Circuit Simulator](http://fritzing.org/home/)
-* [Platform IO](https://platformio.org/) (A crossplatform IDE/Toolchain that makes it possible to [debug](http://docs.platformio.org/en/latest/plus/debugging.html) projects)
