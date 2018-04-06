@@ -31,11 +31,11 @@ The brain of the Shield Bot is the Arduino.  An Arduino is a microcontroller dev
 
 Great question.  And fear not, it's actually quite simple.  There are three key steps that we will follow to get you going.
 
-* [Hello World](#hello-world)
-* [Learn to use the line sensors.](#learn-to-use-the-line-sensors)
-* [Learn to drive the servo motors.](#learn-to-drive-the-servo-motors)
-* [Follow the Line](#follow-the-line)
-* [Take it to the Limit](#take-it-to-the-limit)
+1. [Hello World](#hello-world)
+2. [Learn to use the line sensors.](#learn-to-use-the-line-sensors)
+3. [Learn to drive the servo motors.](#learn-to-drive-the-servo-motors)
+4. [Follow the Line](#follow-the-line)
+5. [Take it to the Limit](#take-it-to-the-limit)
 
 I will be getting you through these steps as quickly as I can.  My guess is that it will take around 1 hour to complete the setup process.
 
